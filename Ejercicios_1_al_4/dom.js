@@ -33,34 +33,33 @@
 
 // Por pantalla mostrar los resultados del viaje seleccionado. Utilizar funciones para 
 // cada cálculo por separado (si desean, pueden imrimir cada resultado individualmente)
+/*
 const from = document.getElementById('contenido').addEventListener('submit', function(e){
-    
-});
-//Crear las funciones de calculo para el precio del viaje total y el individual de cada parte, como 
-//litros en todo el viaje y cuanto seria.
-
-
-
-//  Recuperar datos de un formulario con JS
-//Primero creamos un "escuchador de eventos"
-/*const form = document.getElementById('formulario').addEventListener('submit', function(e){
- 
-    //Asignamos constantes a los valores que queremos "traer"
-    const nombre = document.getElementById('nombre').value;
-    const edad = document.getElementById('edad').value;
-  
-    console.log(nombre, edad);
-    //Prevenimos el evento de carga
+    const totalLitros = litrosGastados(document.getElementById('cantkm').value, document.getElementById('consumo').value);
+    const precioNaftaTotal = totalLitros*document.getElementById('precionafta').value;
+    const precioViajeInd = viajeIndividual(document.getElementById('costoestadia').value, precioNaftaTotal, document.getElementById('cantidadias').value, document.getElementById('personas').value);
+    const precioTotal = viajeTotal(precioViajeInd, document.getElementById('personas').value)
     e.preventDefault();
-  
-    //Seleccionamos una etiqueta del HTML
-    const documento = document.querySelector('.contenido');
-  //Creamos constante para "Resumir" generar parrafos
+    const etiqueta = document.getElementById('contenido');
     const p = document.createElement('p');
-  //Le agregamos un valor al contenido que queremos generar (en este caso un parrafo)
-  p.innerHTML = nombre;
-  //Le generamos un nuevo elemento al DOM 
-  documento.appendChild(p);
-  
-  
-  });*/
+    p.innerHTML = `El total por el viaje con estadia y consumo de litros es: $${precioTotal}<br>
+    El gasto individual por persona sobre todo el viaje es: $${precioViajeInd}<br>
+    El gasto de combustible total es: ${totalLitros}<br>
+    El gasto por combustible es: ${precioNaftaTotal}<br>`;
+    etiqueta.appendChild(p);
+});
+function viajeTotal(parm1, parm2){
+    let total;
+    total = parm1*parm2;
+    return total;
+}
+function viajeIndividual(parm1, parm2, parm3, parm4){
+    let totalU = (Number(parm1)+Number(parm2/parm4))*parm3;
+    console.log(totalU+" esto es para ver si toma func viajeIndividual")
+    return totalU;
+}
+function litrosGastados(parm1, parm2){
+  let litrosT;
+  litrosT = parm1/parm2;
+  return litrosT;
+}*/
