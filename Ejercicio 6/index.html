@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="#" id="formulario">
+        <label for="titulo">Ingrese el titulo de la tarea</label>
+        <input type="text" name="titulo" id="titulo">
+        <br>
+        <label for="contenido">Ingrese el contenido de lo que se debe hacer en la tarea</label>
+        <input type="text" name="contenido" id="contenido">
+        <br>
+        <label for="fechaentrega">ingrese la fecha de entrega de la tarea</label>
+        <input type="date" name="entrega" id="entrega">
+        <br>
+        <input type="submit" value="Cargar">
+    </form>
+    <br><br><br>
+    <table class="muestra">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Tarea</th>
+                <th>Fecha de entrega</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody class = "body">
+            
+        </tbody>
+        <!--
+            <tr>
+                <td class="titulo"></td>
+                <td class="contenido"></td>
+                <td class="fecha"></td>
+            </tr>
+        -->
+    </table>
+</body>
+<script src="dom.js"></script>
+</html>
