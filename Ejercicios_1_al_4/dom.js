@@ -27,6 +27,18 @@
 })*/
 
 //Ejercicio 4
+// Crear un formulario para ingresar datos de un viaje (Destino, cantidad de personas, 
+// cantidad de km, precio de la nafta, consumo del auto en 
+// km/l, costo de la noche de estadia por persona , cantidad de dias que desea viajar)
+
+// Por pantalla mostrar los resultados del viaje seleccionado. Utilizar funciones para 
+// cada cálculo por separado (si desean, pueden imrimir cada resultado individualmente)
+const from = document.getElementById('contenido').addEventListener('submit', function(e){
+    
+});
+//Crear las funciones de calculo para el precio del viaje total y el individual de cada parte, como 
+//litros en todo el viaje y cuanto seria.
+
 
 
 //  Recuperar datos de un formulario con JS
