@@ -4,12 +4,11 @@ que permita a los usuarios crear y mostrar su propias lista de tareas.
 Cada tarea debe tener un botón para eliminarla también al ser creada.
 Utilizar un input para recibir la tarea y un botón para Agregar que la añada a la lista actual.*/
 
-//Contenedor .muestra va a cargar una tabla con su lista de tareas con el tr y el td mas el boton de eliminar
 var juan=0;
 var titulo = [], contenido = [], fecha = [];
 const form = document.getElementById('formulario').addEventListener('submit', function(e){
     e.preventDefault();
-    crearNuevaTarea(document.getElementById('entrega').value, document.getElementById('contenido').value, document.getElementById('titulo').value, '.body');
+    crearNuevaTarea(document.getElementById('titulo').value, document.getElementById('contenido').value, document.getElementById('entrega').value, '.body');
 })
 
 function crearNuevaTarea(titu, conte, fe, contasig){
@@ -17,9 +16,10 @@ function crearNuevaTarea(titu, conte, fe, contasig){
     contenido.push(conte);
     fecha.push(fe);
     const tbody = document.querySelector(contasig);
-    const tr = document.createElement('tr');    
+    const tr = document.createElement('tr'); 
+    tr.classList.add(juan);
     tr.innerHTML = `<td>${titu}</td><td>${conte}</td><td>${fe}</td>
-    <input type="button" value="Elminiar" id="${juan}" onclick="borrar(${juan})">`;
+    <td><input type="button" value="Elminiar" id="${juan}" onclick="borrar(${juan})"></td>`;
     tbody.appendChild(tr);
     juan++;
 }
@@ -32,8 +32,9 @@ function reestructurar(){
     const tbody = document.querySelector('.body')
     for(let i=0; i<titulo.length; i++){
         const tr = document.createElement('tr');
+        tr.classList.add(i)
         tr.innerHTML = `<td>${titulo[i]}</td><td>${contenido[i]}</td><td>${fecha[i]}</td>
-        <input type="button" value="Elminiar" id="${i}" onclick="borrar(${i})">`;
+        <td><input type="button" value="Elminiar" id="${i}" onclick="borrar(${i})"></td>`;
         tbody.appendChild(tr);
     }
 }
