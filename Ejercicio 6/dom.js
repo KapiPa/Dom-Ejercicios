@@ -8,15 +8,11 @@ Utilizar un input para recibir la tarea y un botón para Agregar que la añada a
 var juan=0;
 var titulo = [], contenido = [], fecha = [];
 const form = document.getElementById('formulario').addEventListener('submit', function(e){
-    const a = document.getElementById('titulo').value;
-    const b = document.getElementById('contenido').value;
-    const c = document.getElementById('entrega').value;
     e.preventDefault();
-    crearNuevaTarea(a, b, c, '.body');
+    crearNuevaTarea(document.getElementById('entrega').value, document.getElementById('contenido').value, document.getElementById('titulo').value, '.body');
 })
 
 function crearNuevaTarea(titu, conte, fe, contasig){
-
     titulo.push(titu);
     contenido.push(conte);
     fecha.push(fe);
