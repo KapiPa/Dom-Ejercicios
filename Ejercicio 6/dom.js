@@ -9,7 +9,7 @@ var juan=0;
 var titulo = [], contenido = [], fecha = [];
 const form = document.getElementById('formulario').addEventListener('submit', function(e){
     e.preventDefault();
-    crearNuevaTarea(document.getElementById('entrega').value, document.getElementById('contenido').value, document.getElementById('titulo').value, '.body');
+    crearNuevaTarea(document.getElementById('titulo').value, document.getElementById('contenido').value, document.getElementById('entrega').value, '.body');
 })
 
 function crearNuevaTarea(titu, conte, fe, contasig){
